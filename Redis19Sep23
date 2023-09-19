@@ -1,1 +1,76 @@
+Install BREW on MacOS:
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+==> Checking for `sudo` access (which may request your password)...
+Password: **********
+==> This script will install:
+/usr/local/bin/brew
+/usr/local/share/doc/homebrew
+/usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+Press RETURN/ENTER to continue or any other key to abort:
+==> /usr/bin/sudo /usr/sbin/chown -R matt.chalmers:admin /usr/local/Homebrew
+==> Downloading and installing Homebrew...
+remote: Enumerating objects: 247437, done.
+remote: Counting objects: 100% (506/506), done.
+remote: Compressing objects: 100% (319/319), done.
+remote: Total 247437 (delta 199), reused 453 (delta 174), pack-reused 246931
+Receiving objects: 100% (247437/247437), 72.97 MiB | 7.81 MiB/s, done.
+Resolving deltas: 100% (180780/180780), done.
+==> Installation successful!
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics data has been sent yet (nor will any be during this install run).
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/matt.chalmers/.zprofile
+    eval "$(/usr/local/bin/brew shellenv)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+
+Install Redis on MacOS using BREW:
+
+matt.chalmers@Matts-MacBook-Air ~ % brew install redis
+==> Downloading https://ghcr.io/v2/homebrew/core/redis/manifests/7.2.1
+######################################################################### 100.0%
+==> Fetching dependencies for redis: ca-certificates and openssl@3
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2023-
+######################################################################### 100.0%
+==> Fetching ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/blobs/sha256:a3
+######################################################################### 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/manifests/3.1.2-1
+######################################################################### 100.0%
+==> Fetching openssl@3
+==> Downloading https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:0acd29c8
+######################################################################### 100.0%
+==> Fetching redis
+==> Downloading https://ghcr.io/v2/homebrew/core/redis/blobs/sha256:697cd84b21cf
+######################################################################### 100.0%
+==> Installing dependencies for redis: ca-certificates and openssl@3
+==> Installing redis dependency: ca-certificates
+==> Downloading https://ghcr.io/v2/homebrew/core/ca-certificates/manifests/2023-
+Already downloaded: /Users/matt.chalmers/Library/Caches/Homebrew/downloads/a8cd32e30cae0b7335779e93a6554f294f09485802fc253a3a8be441337a6115--ca-certificates-2023-08-22.bottle_manifest.json
+==> Pouring ca-certificates--2023-08-22.monterey.bottle.tar.gz
+==> Regenerating CA certificate bundle from keychain, this may take a while...
+
+Start Redis on MacOS using BREW : brew services start redis
+
+==> Successfully started `redis` (label: homebrew.mxcl.redis)
+
+matt.chalmers@Matts-MacBook-Air ~ % brew services info redis
+redis (homebrew.mxcl.redis)
+Running: ✔
+Loaded: ✔
+Schedulable: ✘
+User: matt.chalmers
+PID: 7433
+
+Test Redis : redis-cli
+127.0.0.1:6379> cd..
